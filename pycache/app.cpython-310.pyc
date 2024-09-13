@@ -1,0 +1,24 @@
+o
+    ·Œod¤  ã                   @   sx   d dl Zd dlZd dlmZ d dlm Z mZm	Z	 e e
+ƒZ
+edƒZg d¢Z
+e
+jdd gdd	d
+„ ƒZe
+d
+kr:e
+ ¡  dS dS )é    N)Ú
+load_model)ÚFlaskÚ requestÚ jsonifyz
+dogModel.h5)z
+Tick feverZ	DistemperZ
+ParvovirusZ	HepatitisZ TetanuszChronic kidney DiseaseZDiabeteszGastrointestinal DiseaseZ	AllergiesZ
+GingitivisZ Cancersz
+Skin Rashesz/predictÚPOST)Ú methodsc                  C   s^   t j} t | ¡}|jd dk rtddiƒS t  |¡g}t 	|¡}t 
+|¡}t
+| }td|iƒS )Né   é   Ú messagez5Maaf, setidaknya Anda perlu melakukan input 3 gejala.Z
+Prediction)r   ÚjsonÚpdZ	DataFrameÚshaper   ÚnpZarrayÚmodelÚ predictZargmaxÚlabels)Zjson_Zquery_dfZdfZ
+predictionZ	max_indexZpredicted_label© r   úD:\DogModel\app.pyr      s   
+
+
+r   Ú__main__)Zpandasr   Znumpyr   Zkeras.modelsr   Úflaskr   r   r   Ú__name__Úappr   r   Úrouter   Úrunr   r   r   r   Ú<module>   s   
+ÿ
